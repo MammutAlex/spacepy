@@ -54,10 +54,7 @@ except: #numpy not installed, hopefully just getting egg info
         from distutils.command.install import install as _install
         from distutils.command.sdist import sdist as _sdist
 
-if use_setuptools:
-    from setuptools.command.bdist_wininst import bdist_wininst as _bdist_wininst
-else:
-    from distutils.command.bdist_wininst import bdist_wininst as _bdist_wininst
+from distutils.command.bdist_wininst import bdist_wininst as _bdist_wininst
 if 'bdist_wheel' in sys.argv:
     from wheel.bdist_wheel import bdist_wheel as _bdist_wheel
 import distutils.ccompiler
